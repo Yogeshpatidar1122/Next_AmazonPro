@@ -25,7 +25,7 @@ const Banner = () => {
       <div
       style={{
         position: "absolute",
-        top: "65%",
+        top: "68%",
         left: "111%",
         transform: "translate(-50%, 0)",
       }}
@@ -72,8 +72,8 @@ const Banner = () => {
   };
   
   return (
-
-    <div className='lg:min-h-screen relative overflow-hidden '>
+      
+    <div className='lg:min-h-screen relative'>
 
       <Slider {...settings}>
         {/* sliderone image  */}
