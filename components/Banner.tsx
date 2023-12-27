@@ -125,7 +125,7 @@ const Banner = () => {
           </div>
         </div>
       </Slider>
-      <div className="h-20 bg-white absolute left-1/2 -bottom-10 transform -translate-x-1/2 hidden lg:inline-flex items-center gap-x-12 p-10" style={{ width:"100",bottom:0 }}>
+      <div className="h-10 bg-white absolute left-1/2 -bottom-10 transform -translate-x-1/2 hidden lg:inline-flex items-center gap-x-12 p-10" style={{ width:"100",bottom:0 }}>
         <div className="flex items-center gap-5 w-60">
           <Clock className="text-yellow-400 w-8 h-8" />
           <div>
