@@ -1,10 +1,10 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import Auth0Provider from "next-auth/providers/auth0";
+// import Auth0Provider from "next-auth/providers/auth0";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import InstagramProvider from "next-auth/providers/instagram";
-import DiscordProvider from "next-auth/providers/discord";
+// import InstagramProvider from "next-auth/providers/instagram";
+// import DiscordProvider from "next-auth/providers/discord";
 
 const authOptions = {
   providers: [
@@ -16,10 +16,10 @@ const authOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-    // LinkedInProvider({
-    //   clientId: process.env.LINKEDIN_CLIENT_ID!,
-    //   clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
-    // }),
+     LinkedInProvider({
+       clientId: process.env.LINKEDIN_CLIENT_ID!,
+       clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
+     }),
     // InstagramProvider({
     //   clientId: process.env.INSTAGRAM_CLIENT_ID!,
     //   clientSecret: process.env.INSTAGRAM_CLIENT_SECRET!,
@@ -37,5 +37,4 @@ const authOptions = {
 };
 
 const handler = NextAuth(authOptions);
-
 export { handler as GET, handler as POST };

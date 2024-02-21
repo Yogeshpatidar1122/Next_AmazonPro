@@ -26,15 +26,13 @@ const Navbar = () => {
           {navigation.map((item) => (
             <Link href={item?.href} key={item._id}>
               <li
-                className={`hover:text-black cursor-pointer duration-200 relative overflow-hidden group ${
-                  item.href === pathname && "text-designColor"
-                }`}
+                className={`hover:text-black cursor-pointer duration-200 relative overflow-hidden group ${item.href === pathname && "text-designColor"
+                  }`}
               >
                 {item?.title}
                 <span
-                  className={`absolute h-[1px] w-full bg-blue-700 left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-500 ${
-                    item.href === pathname && "translate-x-0 bg-designColor"
-                  }`}
+                  className={`absolute h-[1px] w-full bg-blue-700 left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-500 ${item.href === pathname && "translate-x-0 bg-designColor"
+                    }`}
                 />
               </li>
             </Link>
@@ -65,7 +63,15 @@ const Navbar = () => {
               href={"/profile"}
               className="hover:text-black cursor-pointer duration-200 relative overflow-hidden group text-sm uppercase font-semibold"
             >
-              Profile
+              {session.user?.image && (
+                <img
+                  src={session.user.image}
+                  alt={`${session.user.name}'s Profile Picture`}
+                  className="mx-7 w-8 h-8 rounded-full "
+                />
+              )}
+              {/* Profile */}
+              {session.user?.name || 'Profile'}
               <span className="absolute h-[1px] w-full bg-blue-700 left-0 bottom-0 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-500" />
             </Link>
           ) : (
